@@ -77,7 +77,6 @@ function calculate(firstNumber, secondNumber, operation) {
     default:
       return "Error: Invalid operation.";
   }
-
 }
 
 // calculate(5, 10, "+");
@@ -97,7 +96,13 @@ function getInput() {
   console.log(two);
   console.log(operation);
   calculate(one, two, operation);
-//   console.log(calculate);3479
+  //   console.log(calculate);
+
+  if (isNaN(one) || isNaN(two)) {
+    alert("One or both inputs are not valid numbers.");
+    return;
+  }
+
   let result = calculate(one, two, operation);
   window.alert(`Result: ${result}`);
   console.log(`Result: ${result}`);
