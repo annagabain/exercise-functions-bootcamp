@@ -6,11 +6,14 @@ Call the function and console.log the answer.
 Tip: You can use .length on a variable that is a string to get its length.*/
 
 function findLength(string) {
-    return string.length
-
+  return string.length;
 }
-console.log(findLength('I am a little cat'))
-console.log('I am a little cat with an immense appetite'.length)
+console.log(`"I am a little cat" sentence has ${ findLength( "I am a little cat")} characters.`);
+
+let sentence ='"I am a little cat with an immense appetite"';
+let letterCount = sentence.replace(/[^a-zA-Z]/g, '').length;
+console.log(`${sentence} sentence has ${"I am a little cat with an immense appetite".length} characters but ${letterCount} letters`);
+
 
 
 /*
@@ -22,8 +25,15 @@ The string should always have 10 characters and follow the pattern 'YYYY-MM-DD'.
 You should be able to call year('2019-10-14') and get the number 2019 as the result.
 */
 
+function findYear(string) {
+  if (string.length === 10 && string[4] === "-" && string[7] === "-") {
+    console.log("The Year is:", string.substring(0,4));
+  } else {
+    console.log('Please use "YYYY-MM-DD"');
+  }
+}
 
-
+findYear("2024-10-04"); //prints 2019
 
 /*
 Exercise 3
