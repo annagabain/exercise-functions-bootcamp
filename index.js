@@ -96,7 +96,7 @@ function calculate(firstNumber, secondNumber, operation) {
 // calculate("hej", 10);
 // calculate(10, "Hej");
 
-getInput();
+// getInput();
 function getInput() {
   let one = parseInt(window.prompt("Enter a number:"));
   let two = parseInt(window.prompt("Enter another number:"));
@@ -216,7 +216,7 @@ function playRound() {
 }
 
 // Start the game
-playRound();
+// playRound();
 
 /*
 ************************************************************************
@@ -228,11 +228,27 @@ and then get back how much each person in the group should pay.
 ************************************************************************
 */
 
-let totalAmount = prompt("Enter the total amount of the bill");
-let numberOfFriends = prompt("How many friends should pay the bill?");
-let tip = totalAmount * 0.10
-console.log('tip', tip);
-totalAmount = parseInt(totalAmount) + tip
-console.log(totalAmount);
-let eachPersonShare = totalAmount / numberOfFriends
-console.log(eachPersonShare);
+function splitTheBill() {
+  let totalAmount = parseFloat(prompt("Enter the total amount of the bill:"));
+  let numberOfFriends = parseInt(
+    prompt("How many friends should pay the bill?")
+  );
+
+  let tip = totalAmount * 0.1;
+
+  if (isNaN(totalAmount) || isNaN(numberOfFriends) || isNaN(tip)) {
+    alert("Invalid input");
+    return;
+  }
+  2;
+
+  console.log("tip", tip);
+  totalAmount = parseInt(totalAmount) + tip;
+  console.log(totalAmount);
+  alert(`Total amount, including the 10% tip: ${Math.round(totalAmount)} kr`);
+
+  let eachPersonShare = totalAmount / numberOfFriends;
+  console.log(eachPersonShare);
+  alert(`Each friend pays ${Math.round(eachPersonShare)} kr`);
+}
+splitTheBill();
