@@ -8,13 +8,19 @@ Tip: You can use .length on a variable that is a string to get its length.*/
 function findLength(string) {
   return string.length;
 }
-console.log(`"I am a little cat" sentence has ${ findLength( "I am a little cat")} characters.`);
+console.log(
+  `"I am a little cat" sentence has ${findLength(
+    "I am a little cat"
+  )} characters.`
+);
 
-let sentence ='"I am a little cat with an immense appetite"';
-let letterCount = sentence.replace(/[^a-zA-Z]/g, '').length;
-console.log(`${sentence} sentence has ${"I am a little cat with an immense appetite".length} characters but ${letterCount} letters`);
-
-
+let sentence = '"I am a little cat with an immense appetite"';
+let letterCount = sentence.replace(/[^a-zA-Z]/g, "").length;
+console.log(
+  `${sentence} sentence has ${
+    "I am a little cat with an immense appetite".length
+  } characters but ${letterCount} letters`
+);
 
 /*
 Exercise 2
@@ -27,7 +33,7 @@ You should be able to call year('2019-10-14') and get the number 2019 as the res
 
 function findYear(string) {
   if (string.length === 10 && string[4] === "-" && string[7] === "-") {
-    console.log("The Year is:", string.substring(0,4));
+    console.log("The Year is:", string.substring(0, 4));
   } else {
     console.log('Please use "YYYY-MM-DD"');
   }
@@ -41,6 +47,61 @@ Write a function that takes three parameters. The first two are numbers and the 
 Perform the calculation and return the result and print it out. It should only be possible to pass numbers (except the operator, which is a string), 
 and each operation should be its own function. Tip: typeof can be useful here.
 */
+
+function add(firstNumber, secondNumber) {
+  return firstNumber + secondNumber;
+}
+
+function subtract(firstNumber, secondNumber) {
+  return firstNumber - secondNumber;
+}
+
+function divide(firstNumber, secondNumber) {
+  return firstNumber / secondNumber;
+}
+
+function multiply(firstNumber, secondNumber) {
+  return firstNumber * secondNumber;
+}
+
+function calculate(firstNumber, secondNumber, operation) {
+  switch (operation) {
+    case "+":
+      return add(firstNumber, secondNumber);
+    case "-":
+      return subtract(firstNumber, secondNumber);
+    case "/":
+      return divide(firstNumber, secondNumber);
+    case "*":
+      return multiply(firstNumber, secondNumber);
+    default:
+      return "Error: Invalid operation.";
+  }
+
+}
+
+// calculate(5, 10, "+");
+// calculate(5, 10, "-");
+// calculate(5, 10, "/");
+// calculate(5, 10, "*");
+// calculate("hej", 10);
+// calculate(10, "Hej");
+
+getInput();
+function getInput() {
+  let one = parseInt(window.prompt("Enter a number:"));
+  let two = parseInt(window.prompt("Enter another number:"));
+  let operation = window.prompt("Enter an operation (+, -, /, *):");
+
+  console.log(one);
+  console.log(two);
+  console.log(operation);
+  calculate(one, two, operation);
+//   console.log(calculate);3479
+  let result = calculate(one, two, operation);
+  window.alert(`Result: ${result}`);
+  console.log(`Result: ${result}`);
+}
 
 /*
 Exercise 4
